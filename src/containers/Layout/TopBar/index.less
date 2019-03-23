@@ -1,0 +1,104 @@
+
+
+.topBar {
+  width: 100%;
+  position: relative;
+  overflow-x: hidden;
+
+  .leftBut, .rightBut {
+    display: none;
+    cursor: pointer;
+    z-index: 10;
+    position: absolute;
+    height: 100%;
+    width: 30px;
+    top: 0;
+    // cursor: not-allowed;
+    background-color: #fff;
+
+    i {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transition: all .2s;
+      transform: translate(-50%, -50%);
+      color: #999;
+
+    }
+
+    &:hover i {
+      color: #666;
+      transform: translate(-50%, -50%) scale(1.2);
+    }
+  }
+
+  .leftBut {
+    left: 0;
+    // background: linear-gradient(to right, #fff 60% , rgba(255,255,255, 0.1));
+  }
+
+  .rightBut {
+    right: 0;
+    // background: linear-gradient(to left, #fff 60% , rgba(255,255,255, 0.1));
+  }
+
+  &.outWidth {
+    padding: 0 30px;
+    .leftBut, .rightBut {
+      display: block;
+    }
+  }
+}
+
+.topBarUl {
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+
+  .oneNav {
+    cursor: pointer;
+    flex: none;
+    user-select: none;
+    padding: 8px 10px;
+    border-radius: 6px 6px 0 0;
+    background-color: #6bd2b1;
+    color: #fff;
+    transition: all 0.2s;
+
+    &:not(:first-child) {
+      margin-left: 4px;
+    }
+
+    &.active {
+      background-color: #f0f2f5;
+      color: rgba(0, 0, 0, 0.65);
+    }
+
+    &:hover {
+      opacity: .8;
+    }
+
+    .navIcon {
+      overflow: hidden;
+      margin-right: 5px;
+    }
+
+    .navIconClose {
+      opacity: .8;
+      margin-left: 5px;
+      color: #fff;
+      transition: all 0.2s;
+
+      &:hover {
+        opacity: 1;
+        transform: scale(1.2);
+      }
+
+      &.active {
+      background-color: #f0f2f5;
+      color: rgba(20, 14, 14, 0.35);
+    }
+    }
+  }
+}
